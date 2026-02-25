@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Focus Mode Controller</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Focus Mode</h1>
+      <p class="sub">Stay focused — get things done 💪</p>
+    </header>
+
+    <div class="row top-row">
+      <label class="switch">
+        <input id="toggleFocus" type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span id="status">Off</span>
+    </div>
+
+    <div class="row">
+      <input id="siteInput" placeholder="Add site (example: youtube.com)" />
+      <button id="addBtn" class="btn">Add</button>
+    </div>
+
+    <div id="list" class="list"></div>
+
+    <div class="row">
+      <label>Duration (minutes)</label>
+      <input id="duration" type="number" min="1" value="25" />
+      <button id="startTimer" class="btn">Start</button>
+    </div>
+
+    <div class="row small">
+      <button id="pauseTimer" class="btn ghost">Pause</button>
+      <button id="stopTimer" class="btn ghost">Stop</button>
+      <button id="tempAllow" class="btn alt">Allow 5 min</button>
+    </div>
+
+    <div class="timer" id="timer">00:00</div>
+
+    <hr/>
+
+    <h3>Security & Schedule</h3>
+    <div class="row">
+      <input id="pinInput" placeholder="Set 4-digit PIN (optional)" maxlength="4" />
+      <button id="setPin" class="btn">Set PIN</button>
+    </div>
+
+    <div class="row">
+      <label>Start</label>
+      <input id="schedStart" type="time" />
+      <label>End</label>
+      <input id="schedEnd" type="time" />
+    </div>
+
+    <div class="row days">
+      <label><input type="checkbox" class="day" data-day="1">Mon</label>
+      <label><input type="checkbox" class="day" data-day="2">Tue</label>
+      <label><input type="checkbox" class="day" data-day="3">Wed</label>
+      <label><input type="checkbox" class="day" data-day="4">Thu</label>
+      <label><input type="checkbox" class="day" data-day="5">Fri</label>
+      <label><input type="checkbox" class="day" data-day="6">Sat</label>
+      <label><input type="checkbox" class="day" data-day="0">Sun</label>
+    </div>
+
+    <div class="row small">
+      <button id="saveSchedule" class="btn">Save Schedule</button>
+      <button id="clearSchedule" class="btn ghost">Clear</button>
+    </div>
+
+    <hr/>
+    <h3>Stats</h3>
+    <div class="row">
+      <div>Blocked attempts: <span id="blockedCount">0</span></div>
+      <button id="resetStats" class="btn ghost">Reset</button>
+    </div>
+
+    <p class="hint">Tip: add domains like <code>facebook.com</code> or <code>t.co</code> (no https://)</p>
+    <footer>Made with ❤️</footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

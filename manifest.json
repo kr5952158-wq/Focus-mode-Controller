@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Mode Website Controller",
+  "version": "1.0",
+  "description": "Per-site focus timer with auto block",
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "alarms"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
+
+
